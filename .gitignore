@@ -1,0 +1,21 @@
+# Build directory
+build/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Compiled files
+*.o
+*.so
+*.a
+*.exe
+*.out
+
+# Qt specific
+*.user
+moc_*
+ui_*
+
+# Task data file
+tasks.txt
