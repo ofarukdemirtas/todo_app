@@ -94,10 +94,12 @@ void TodoGUI::updateTaskList() {
     std::vector<Task> tasks = todoList->getTasks();
     for (const auto& task : tasks) {
         QString status = task.completed ? "[✓] " : "[ ] ";
-        QString line = QString("ID:%1 %2%3")
+        QString timestamp = QString::fromStdString(TodoList::formatTimestamp(task.timestamp));
+        QString line = QString("ID:%1 %2%3 (Created: %4)")
             .arg(task.id)
             .arg(status)
-            .arg(QString::fromStdString(task.description));
+            .arg(QString::fromStdString(task.description))
+            .arg(timestamp);
         taskList->addItem(line);
     }
 }
