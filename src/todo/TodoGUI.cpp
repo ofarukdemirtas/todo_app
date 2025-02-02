@@ -9,7 +9,7 @@
 TodoGUI::TodoGUI(QWidget* parent) : QMainWindow(parent) {
     todoList = new TodoList();
     try {
-        todoList->loadFromFile("tasks.txt");
+        todoList->loadFromFile("tasks.txt");  // Loads saved tasks when app starts
     } catch (...) {
         // Ignore file loading errors
     }
@@ -106,7 +106,7 @@ void TodoGUI::updateTaskList() {
 
 void TodoGUI::save() {
     try {
-        todoList->saveToFile("tasks.txt");
+        todoList->saveToFile("tasks.txt");  // Saves tasks when app closes
     } catch (...) {
         // Handle save errors if needed
     }
